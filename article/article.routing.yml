@@ -1,0 +1,8 @@
+
+article.article_controller_page:
+  path: '/article/page'
+  defaults:
+    _controller: '\Drupal\article\Controller\articleController::page'
+    _title: 'Article list'
+  requirements:
+    _permission: 'access content'

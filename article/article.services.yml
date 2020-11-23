@@ -1,0 +1,7 @@
+services:
+  logger.channel.article:
+    parent: logger.channel_base
+    arguments: ['article']
+  article.default:
+    class: Drupal\article\articleService
+    arguments: ['@entity_type.manager']

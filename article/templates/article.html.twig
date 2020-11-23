@@ -1,0 +1,10 @@
+<!-- Add you custom twig html here -->
+
+ <h4> {{ title }} </h4> <!--próbne wywołanie tytułu  -->
+
+<p> Our articles are below:</p>
+<ul>
+    {% for article in items %}
+        <li>{{ article.name }}</li>
+    {% endfor %}
+</ul>
