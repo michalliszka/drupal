@@ -1,0 +1,7 @@
+services:
+  logger.channel.modul_z_blokiem:
+    parent: logger.channel_base
+    arguments: ['modul_z_blokiem']
+  modul_z_blokiem.default:
+    class: Drupal\modul_z_blokiem\DefaultService
+    arguments: ['@entity_type.manager']

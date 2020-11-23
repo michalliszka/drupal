@@ -1,0 +1,5 @@
+name: 'Modul z blokiem'
+type: module
+description: 'Modul z blokiem dla newsow'
+core: 8.x
+package: 'Custom'

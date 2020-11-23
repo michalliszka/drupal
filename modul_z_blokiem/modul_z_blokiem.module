@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Contains modul_z_blokiem.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function modul_z_blokiem_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the modul_z_blokiem module.
+    case 'help.page.modul_z_blokiem':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Modul z blokiem dla newsow') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function modul_z_blokiem_theme() {
+  return [
+    'default_block' => [
+      'variables' => [
+        'content' => [],
+        'terms' => []
+      ],
+    ],
+  ];
+}

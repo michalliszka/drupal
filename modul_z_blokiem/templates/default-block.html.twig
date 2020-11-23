@@ -1,0 +1,48 @@
+{#
+/**
+* @file
+* Default theme implementation to display a block.
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+<style>
+    table {
+        width: 100%;
+    }
+    th, td {
+        text-align: center;
+        border-bottom: 1px solid #7c1717;
+    }
+    .news {
+        width: 33%
+    }
+</style>
+{% set classes = [
+    'clear-both',
+] %}
+<div{{ attributes.addClass(classes) }}>
+    <table>
+        <tr>    
+            {% for news in content %}
+                <th class="news">
+                    <a href="{{path('entity.node.canonical', {'node': news.nid.value})}}"> {{news.title.value}}</a>
+                </th>
+            {% endfor %}         
+        </tr>
+        <tr>        
+            {%for news in content%}
+                {%for term in terms%}
+                    {% if term.tid.value == news.field_category.target_id%}
+                        <td class="news">
+                            {{term.name.value}}
+                        </td>
+                    {%endif%}
+                {%endfor%}
+            {%endfor%}    
+        </tr>
+    </table>
+</div>
+
