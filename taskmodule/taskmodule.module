@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Contains taskmodule.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function taskmodule_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the taskmodule module.
+    case 'help.page.taskmodule':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Modul wykonany w ramach szkolenia') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ * Added empty matrix 'items' into matrix 'variables' 
+ */
+function taskmodule_theme() {
+  return array(
+    'taskmodule' => array(
+      'variables' => array(
+        'items' => array(),
+        'terms' => array()
+        )
+    )
+  );
+}

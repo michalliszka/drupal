@@ -1,0 +1,8 @@
+
+taskmodule.taskmodule_controller_print:
+  path: '/news'
+  defaults:
+    _controller: '\Drupal\taskmodule\Controller\taskmoduleController::print'
+    _title: 'Wyświetlenie newsów'
+  requirements:
+    _permission: 'access content'

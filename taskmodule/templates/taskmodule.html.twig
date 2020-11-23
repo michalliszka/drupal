@@ -1,0 +1,46 @@
+<!-- Add you custom twig html here -->
+<div>
+    <hr>
+    <p>Wybierz kategorię newsa:</p>
+    <ul>
+        {%for term in terms%}
+        <li style="display: inline; background-color: rgb(136, 255, 0)"><a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': term.tid.value}) }}">{{term.name.value}}</a></li>
+        {%endfor%}
+    </ul>
+    <hr>
+</div>
+{% for news in items %}
+    <div style="text-align: center;">
+        <b>{{news.title.value}}</b><br>
+    </div>
+    <hr>
+
+    <div>
+        <b>Treść:</b>   <em>{{news.body.value}}</em>
+    </div>
+    <br><br>
+    <div> 
+        <b>Kategoria:</b>  
+        <!-- Zmienna pomocnicza w celu określenia tid na bazie news -->
+        <!-- {{news.field_category.target_id}} -->
+        {%for term in terms%}
+            {%if term.tid.value == news.field_category.target_id %}
+                {{term.name.value}}
+            {%endif%}
+        {%endfor%}
+    </div>
+    <div>
+        <b>Obraz:</b> {{news.field_picture.target_id}}
+        <br>
+        <!-- Sprawdzam, czy atrybut encji, czyli obrazek jest czy nie -->
+        {% if news.field_picture is not empty %}
+        <!-- jeżeli tak, to go wywołuję -->
+            <img src="{{ file_url(news.field_picture.entity.uri.value)}}" />
+        {% else %}
+        <!-- jeżeli nie informuję o braku obrazka do wyświetlenia -->
+            <p>Brak <u>obrazka</u> do wyświetlenia</p>
+        {%endif%}
+    </div>
+    <hr>
+{% endfor %}
+

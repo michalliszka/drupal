@@ -1,0 +1,5 @@
+name: 'taskmodule'
+type: module
+description: 'Modul wykonany w ramach szkolenia'
+core: 8.x
+package: 'Custom'

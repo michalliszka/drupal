@@ -1,0 +1,7 @@
+services:
+  logger.channel.taskmodule:
+    parent: logger.channel_base
+    arguments: ['taskmodule']
+  taskmodule.default:
+    class: Drupal\taskmodule\taskmoduleService
+    arguments: ['@entity_type.manager']
