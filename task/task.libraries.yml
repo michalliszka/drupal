@@ -1,0 +1,6 @@
+#task.libraries.yml
+global:
+  version: VERSION
+  css:
+    theme:
+      css/style.css: {}

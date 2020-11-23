@@ -1,0 +1,41 @@
+/* style.css */
+h1 {
+    color: black(15, 150, 105);
+}
+
+body {
+    background-color:antiquewhite;
+    margin: 100px;
+
+}
+
+h1:hover {
+    background-color: black;
+    color: white;
+}
+
+.views-row {
+    border: 1px solid black;
+}
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #771414;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+.page-title {
+    text-align: center;
+}
+
