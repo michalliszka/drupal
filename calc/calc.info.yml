@@ -1,0 +1,5 @@
+name: 'calc'
+type: module
+description: 'Prosty kalkulator'
+core: 8.x
+package: 'Custom'

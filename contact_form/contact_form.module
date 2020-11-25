@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains contact_form.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function contact_form_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the contact_form module.
+    case 'help.page.contact_form':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Prosty formularz kontaktowy') . '</p>';
+      return $output;
+
+    default:
+  }
+}

@@ -1,0 +1,7 @@
+services:
+  logger.channel.hot_news:
+    parent: logger.channel_base
+    arguments: ['hot_news']
+  hot_news.default:
+    class: Drupal\hot_news\hotNewsService
+    arguments: ['@entity_type.manager']

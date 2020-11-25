@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains calc.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function calc_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the calc module.
+    case 'help.page.calc':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Prosty kalkulator') . '</p>';
+      return $output;
+
+    default:
+  }
+}

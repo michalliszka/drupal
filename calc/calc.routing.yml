@@ -1,0 +1,7 @@
+calc.calc_form:
+  path: '/calc'
+  defaults:
+    _form: '\Drupal\calc\Form\calcForm'
+    _title: 'Nawet działa'
+  requirements:
+    _access: 'TRUE'
