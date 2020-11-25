@@ -27,45 +27,14 @@ class taskmoduleController extends ControllerBase {
   }
 
   /**
-   * Print.
-   * @return string
-   * Added theme and load into matrix items
+   * Funkcja zwracająca wartości na stronę /news
    */
-  public function print() {
-    
-    /**
-     * Ustawienie typu szukanej encji
-     * Zapytanie o "nid" szukanych encji
-     * Przypisanie wyszukanych encji do zmiennej "news"
-     * Przypisanie "news" do tablicy 'items'
-     */
-     $entity_type = 'news';
-     $query =\Drupal::entityTypeManager()->getStorage('node')->getQuery();
-     $nids = $query->condition('type', $entity_type)->execute();
-     $news = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
-     $items =  $news;
-
-     /**
-      * Pobranie wartości tid dla taxonomy
-      */
-    $tid =[];
-    foreach ($news as $term){
-      $tid[]=$term->field_category->target_id;
-    }; 
-    /**
-     * Pobranie wartości name dla taxonomy przez tid
-     */
-    $taxonomy = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadMultiple($tid);
-
-    /**
-     * 
-     */
-    //var_dump($taxonomy);
-
+  public function newsPage() {
+  
     return [
       '#theme' => 'taskmodule',
-      '#items' => $items,
-      '#terms' => $taxonomy
+      '#items' => $this->taskmoduleDefault->news(),
+      '#terms' => $this->taskmoduleDefault->taxonomy()
     ];
   }
 }

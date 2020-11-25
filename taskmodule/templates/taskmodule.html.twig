@@ -1,4 +1,3 @@
-<!-- Add you custom twig html here -->
 <div>
     <hr>
     <p>Wybierz kategorię newsa:</p>
@@ -14,15 +13,13 @@
         <b>{{news.title.value}}</b><br>
     </div>
     <hr>
-
     <div>
-        <b>Treść:</b>   <em>{{news.body.value}}</em>
+        <b>Treść:</b>
+        <em>{{news.body.value}}</em>
     </div>
-    <br><br>
+    <br>
     <div> 
         <b>Kategoria:</b>  
-        <!-- Zmienna pomocnicza w celu określenia tid na bazie news -->
-        <!-- {{news.field_category.target_id}} -->
         {%for term in terms%}
             {%if term.tid.value == news.field_category.target_id %}
                 {{term.name.value}}

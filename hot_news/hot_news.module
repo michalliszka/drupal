@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Contains hot_news.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function hot_news_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the hot_news module.
+    case 'help.page.hot_news':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Modul z trzema najnowszymi newsami') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function hot_news_theme() {
+  return [
+    'hot_news_block' => [
+      'variables' => [
+        'content' => [],
+        'terms' => []
+      ],
+    ],
+  ];
+}

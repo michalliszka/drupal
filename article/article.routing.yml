@@ -1,6 +1,6 @@
 
 article.article_controller_page:
-  path: '/article/page'
+  path: '/articles'
   defaults:
     _controller: '\Drupal\article\Controller\articleController::page'
     _title: 'Article list'

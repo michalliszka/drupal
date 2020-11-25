@@ -22,4 +22,17 @@ class articleService implements articleInterface {
     $this->entityTypeManager = $entity_type_manager;
   }
 
+  /**
+   * Funkcja zwracająca tablicę z tytułami artykułów
+   */
+  public function articles(){
+    $items = array(
+      array('title' => 'Article one'),
+      array('title'=> 'Article two'),
+      array('title' => 'Article three'),
+      array('title' => 'Article four'),
+    );
+
+    return $items;
+  }
 }
