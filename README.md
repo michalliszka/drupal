@@ -5,4 +5,4 @@
 - hot_news - blok na stronę główną z 3 ostatnimy newsami,
 - modul_z_blokiem - starsza wersja hot_news,
 - task - custom theme,
-- askmodule - moduł stworzący stronę /news, gdzie mamy wszystkie newsy, oraz tworzący przyciski filtrowania według kategorii
+- taskmodule - moduł stworzący stronę /news, gdzie mamy wszystkie newsy, oraz tworzący przyciski filtrowania według kategorii
